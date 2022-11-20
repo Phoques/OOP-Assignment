@@ -9,7 +9,7 @@ public abstract class Zone : MonoBehaviour
  //                      -->Powerup
  //This is polymorphism as we are inhereting a class, then changing things.
     protected abstract void ZoneTrigger(GameObject marble); // abstract means that this function is not going to be created here.
-    //Code for tis funcytion is going to be written in child / derived classes.
+    //Code for tis function is going to be written in child / derived classes.
 
     protected bool isDeactivating = false;
 
@@ -22,8 +22,8 @@ public abstract class Zone : MonoBehaviour
         }
     }
 
-    protected IEnumerator DisableWithDelay(GameObject go, float delay, float returnDelay) // go is the variable set, can be called anything
-    {//The reason we can have two coroutines / functins with the same name is because they have different parameters. this is called OVERLOADING
+    protected IEnumerator DisableWithDelay(GameObject go, float delay, float returnDelay) // go is the variable set(I think go is the object this is attached to?), can be called anything
+    {//The reason we can have two coroutines / functions with the same name is because they have different parameters. this is called OVERLOADING
 
         isDeactivating = true;
         
@@ -48,6 +48,13 @@ public abstract class Zone : MonoBehaviour
 
         isDeactivating = false;
 
+      
+
+    }
+
+    protected IEnumerator DontDisable(GameObject go)
+    {
+        return null;
     }
 
 }
