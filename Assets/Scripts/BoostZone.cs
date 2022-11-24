@@ -14,5 +14,16 @@ public class BoostZone : TheZone
         rb.AddForce(rb.velocity.normalized * _speed, ForceMode.VelocityChange);
     }
 
-    
+
+
+   //public BoostZone(float speed)
+   // {
+
+   //     _speed = speed;
+   // }
+
+   // public BoostZone()
+   // {
+
+   // }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] float _speed;
     [SerializeField] float _speedBoost;
     bool isCatching = false;
+    public Text helpText;
 
 
 
@@ -22,8 +24,12 @@ public class CharacterMovement : MonoBehaviour
                 StartCoroutine(ArmCatcher());
             }
         }
+
+  
+
     }
 
+    
 
     void MoveCharacter()
     {
@@ -39,11 +45,16 @@ public class CharacterMovement : MonoBehaviour
     IEnumerator ArmCatcher()
     {
         isCatching = true;
+        while (isCatching)
+        {
         player.transform.localScale = new Vector3(3f, 0.71482f, 0.2492986f);
         yield return new WaitForSeconds(2f);
         player.transform.localScale = new Vector3(1.6501f, 0.71482f, 0.2492986f);
         yield return new WaitForSeconds(10f);
         isCatching= false;
+        }
         
     }
+
+   
 }

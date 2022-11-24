@@ -50,8 +50,7 @@ public class SpawnMarble : MonoBehaviour
 
    void SpwnMarble()
     {
-        
-        
+
         if (Time.time > nextSpawn)
         {
             
@@ -60,7 +59,7 @@ public class SpawnMarble : MonoBehaviour
             whereToSpawn = new Vector3(_randX, 92f, 135f);
             Instantiate(marble, whereToSpawn, Quaternion.identity, transform);
         }
-        
+
     }
 
     
