@@ -8,7 +8,6 @@ public class CharacterMovement : MonoBehaviour
     public GameObject player;
     [SerializeField] float _speed;
     [SerializeField] float _speedBoost;
-    //GameObject armCatcher;
     bool isCatching = false;
 
 

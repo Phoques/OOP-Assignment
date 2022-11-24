@@ -11,6 +11,8 @@ public class SpawnMarble : MonoBehaviour
     float nextSpawn = 0f;
     public int marbleScoreCount;
 
+    LoseZone loseZone;
+
     private static SpawnMarble _instance;
     public static SpawnMarble Instance
     {
@@ -32,8 +34,14 @@ public class SpawnMarble : MonoBehaviour
     private void Awake()
     {
         Instance = this; //sets the static class instance
+        loseZone = FindObjectOfType<LoseZone>();
     }
 
+    private void Start()
+    {
+
+        
+    }
 
     void Update()
     {
@@ -42,6 +50,8 @@ public class SpawnMarble : MonoBehaviour
 
    void SpwnMarble()
     {
+        
+        
         if (Time.time > nextSpawn)
         {
             
@@ -50,6 +60,9 @@ public class SpawnMarble : MonoBehaviour
             whereToSpawn = new Vector3(_randX, 92f, 135f);
             Instantiate(marble, whereToSpawn, Quaternion.identity, transform);
         }
+        
     }
 
+    
 }
+
